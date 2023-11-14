@@ -1,8 +1,13 @@
+'use client'
+
 import Image from 'next/image'
+import { useContext } from 'react'
+import { HandleProductContext } from '@/context/HandleProductContext'
 import Carrinho from '../../../public/Carrinho.svg'
-import { useQuery } from '@tanstack/react-query'
 
 export function Header() {
+  const { carrinho } = useContext(HandleProductContext)
+
   return (
     <header className="w-full h-[6.313rem] bg-[#0F52BA] flex justify-around items-center">
       <div className="flex items-center gap-2">
@@ -16,7 +21,9 @@ export function Header() {
 
       <div className="w-[5.625rem] h-[2.813rem] rounded-lg bg-white hover:bg-gray-300 flex justify-center items-center gap-4 cursor-pointer">
         <Image src={Carrinho} alt="Icone de um carrinho" />
-        <span className="text-lg leading-normal text-black font-bold">0</span>
+        <span className="text-lg leading-normal text-black font-bold">
+          {carrinho.length}
+        </span>
       </div>
     </header>
   )
