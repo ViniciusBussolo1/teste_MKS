@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Carrinho from '../../../public/Carrinho.svg'
+import { useQuery } from '@tanstack/react-query'
 
 export function Header() {
   return (
