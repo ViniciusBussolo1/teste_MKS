@@ -27,10 +27,21 @@ export function Item({ id, description, name, photo, price }: ItemProps) {
     name: string,
     price: string,
   ) => {
-    const newItem: ItemsProdutosCarrinho = { id, photo, name, price, qtd: 1 }
-    const novoCarrinho = [...carrinho, newItem]
+    const index = carrinho.findIndex((item) => item.id === id)
 
-    setCarrinho(novoCarrinho)
+    if (index !== -1) {
+      const itemAlterado = { ...carrinho[index], qtd: carrinho[index].qtd + 1 }
+
+      const novoCarrinho = [...carrinho]
+      novoCarrinho[index] = itemAlterado
+
+      setCarrinho(novoCarrinho)
+    } else {
+      const newItem: ItemsProdutosCarrinho = { id, photo, name, price, qtd: 1 }
+      const novoCarrinho = [...carrinho, newItem]
+
+      setCarrinho(novoCarrinho)
+    }
   }
 
   return (

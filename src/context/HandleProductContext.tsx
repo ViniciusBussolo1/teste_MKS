@@ -11,7 +11,9 @@ import {
 
 interface HandleProductContextDataProps {
   carrinho: Array<ItemsProdutosCarrinho>
+  carrinhoIsOpen: boolean
   setCarrinho: Dispatch<SetStateAction<ItemsProdutosCarrinho[]>>
+  setCarrinhoIsOpen: Dispatch<SetStateAction<boolean>>
 }
 
 interface HandleProductContextProvidersProps {
@@ -26,12 +28,15 @@ export function HandleProductContextProvider({
   children,
 }: HandleProductContextProvidersProps) {
   const [carrinho, setCarrinho] = useState<Array<ItemsProdutosCarrinho>>([])
+  const [carrinhoIsOpen, setCarrinhoIsOpen] = useState(false)
 
   return (
     <HandleProductContext.Provider
       value={{
         carrinho,
+        carrinhoIsOpen,
         setCarrinho,
+        setCarrinhoIsOpen,
       }}
     >
       {children}

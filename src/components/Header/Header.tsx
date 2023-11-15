@@ -6,7 +6,7 @@ import { HandleProductContext } from '@/context/HandleProductContext'
 import Carrinho from '../../../public/Carrinho.svg'
 
 export function Header() {
-  const { carrinho } = useContext(HandleProductContext)
+  const { carrinho, setCarrinhoIsOpen } = useContext(HandleProductContext)
 
   return (
     <header className="w-full h-[6.313rem] bg-[#0F52BA] flex justify-around items-center">
@@ -19,7 +19,10 @@ export function Header() {
         </h4>
       </div>
 
-      <div className="w-[5.625rem] h-[2.813rem] rounded-lg bg-white hover:bg-gray-300 flex justify-center items-center gap-4 cursor-pointer">
+      <div
+        className="w-[5.625rem] h-[2.813rem] rounded-lg bg-white hover:bg-gray-300 flex justify-center items-center gap-4 cursor-pointer"
+        onClick={() => setCarrinhoIsOpen(true)}
+      >
         <Image src={Carrinho} alt="Icone de um carrinho" />
         <span className="text-lg leading-normal text-black font-bold">
           {carrinho.length}
