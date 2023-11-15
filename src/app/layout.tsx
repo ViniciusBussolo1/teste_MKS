@@ -3,6 +3,7 @@ import { Montserrat } from 'next/font/google'
 import './globals.css'
 import { ReactQueryProvider } from './ReactQueryProvider'
 import { HandleProductContextProvider } from '@/context/HandleProductContext'
+import { SkeletonTheme } from 'react-loading-skeleton'
 
 const montserrat = Montserrat({ subsets: ['latin'] })
 
@@ -21,7 +22,9 @@ export default function RootLayout({
       <html lang="en">
         <body className={montserrat.className}>
           <HandleProductContextProvider>
-            {children}
+            <SkeletonTheme baseColor="#1D2330" highlightColor="#252C3A">
+              {children}
+            </SkeletonTheme>
           </HandleProductContextProvider>
         </body>
       </html>
