@@ -22,13 +22,17 @@ export function Carrinho() {
   return (
     <>
       {carrinhoIsOpen === true && (
-        <aside className="max-w-[30.375rem] w-full h-full flex justify-start absolute top-0 right-0 bg-[#0F52BA] shadow-shadow-carrinho flex-col ">
+        <aside className="max-w-[30.375rem] w-full h-screen flex justify-start absolute top-0 right-0 bg-[#0F52BA] shadow-shadow-carrinho flex-col ">
           <div className="w-full pl-12 pt-9 pr-[1.375rem] flex flex-col flex-1">
             <div className="w-full flex justify-between items-center">
-              <h1 className="max-w-[11.25rem] w-full text-[1.688rem] leading-normal font-bold text-white">
+              <h1
+                data-testid="carrinho"
+                className="max-w-[11.25rem] w-full text-[1.688rem] leading-normal font-bold text-white"
+              >
                 Carrinho de compras
               </h1>
               <div
+                data-testid="fechar"
                 className="h-[2.375rem] w-[2.375rem] bg-black rounded-full flex justify-center items-center cursor-pointer"
                 onClick={() => setCarrinhoIsOpen(false)}
               >
@@ -37,7 +41,7 @@ export function Carrinho() {
             </div>
 
             <div className="w-full mt-[4.375rem] flex flex-col justify-between flex-1 pb-10">
-              <div className="w-full space-y-5 ">
+              <div className="w-full flex flex-col max-[425px]:items-center space-y-5 ">
                 {carrinho.map((item: ItemsProdutosCarrinho) => {
                   return (
                     <ItemCarrinho

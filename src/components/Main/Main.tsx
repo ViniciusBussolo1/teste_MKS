@@ -45,7 +45,7 @@ export function Main() {
         })}
       </div>
       <div>
-        <span className="text-xs leading-normal text-black">
+        <span data-testid="span" className="text-xs leading-normal text-black">
           MKS sistemas © Todos os direitos reservados
         </span>
       </div>

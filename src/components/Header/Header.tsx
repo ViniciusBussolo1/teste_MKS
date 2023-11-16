@@ -24,7 +24,10 @@ export function Header() {
         onClick={() => setCarrinhoIsOpen(true)}
       >
         <Image src={Carrinho} alt="Icone de um carrinho" />
-        <span className="text-lg leading-normal text-black font-bold">
+        <span
+          data-testid="carrinho-length"
+          className="text-lg leading-normal text-black font-bold"
+        >
           {carrinho.length}
         </span>
       </div>

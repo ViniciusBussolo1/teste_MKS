@@ -45,7 +45,10 @@ export function Item({ id, description, name, photo, price }: ItemProps) {
   }
 
   return (
-    <div className="max-w-[13.625rem] w-full pt-[1.125rem] flex flex-col items-center justify-end cursor-pointer">
+    <div
+      data-testid="item"
+      className="max-w-[13.625rem] w-full pt-[1.125rem] flex flex-col items-center justify-end cursor-pointer"
+    >
       <Image src={photo} alt={name} width={147} height={120} />
       <div className="w-full flex items-center justify-between mt-[0.875rem] pr-3 pl-[0.875rem]">
         <h3 className="text-base leading-[1.188rem] font-normal text-[#2C2C2C]">

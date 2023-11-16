@@ -11,6 +11,7 @@ export function ItemsSkeleton({ cards }: ItemsSkeletonProps) {
     .map((_, index) => (
       <div
         key={index}
+        data-testid="loading"
         className="max-w-[13.625rem] w-full h-[18.75rem] bg-[#4b515c] rounded-lg border-gray-3 border-t-[0.2rem] border-r-[0.2rem] border-b-[0.399rem] border-l-[0.2rem] flex flex-col items-center justify-end"
       >
         <Skeleton height={120} width={147} />
