@@ -1,5 +1,9 @@
 #TESTE_MKS
 
+<p align="center">
+  <img src=".github/Preview.png" width="100%" />
+</p>
+
 ## 💻 Projeto
 
 Teste para empresa MKS_Sistemas. O desafio pode ser encontrado através <a href="https://github.com/MKS-desenvolvimento-de-sistemas/mks-frontend-challenge/tree/main">deste GitHub</a>
